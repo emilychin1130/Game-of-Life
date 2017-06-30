@@ -28,10 +28,10 @@ public class ClownSimulation: Simulation {
     func getNeighborPositions(x originX: Int, y originY: Int) -> [(x: Int, y: Int)] {
         var neighbors: [(x:Int, y:Int)] = []
         for x in originX - 1 ... originX + 1 {
-            for y in originY - 1 ... originY - 1 {
+            for y in originY - 1 ... originY + 1 {
                 if x >= 0 && y >= 0 && x < grid.count && y < grid[0].count {
-                    if !(x == originX && y==originY) {
-                        neighbors.append(x: x, y: y)
+                    if !(x == originX && y == originY) {
+                        neighbors.append((x,y))
                     }
                 }
             }
